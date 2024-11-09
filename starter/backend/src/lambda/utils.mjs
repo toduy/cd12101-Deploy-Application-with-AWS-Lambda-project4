@@ -7,3 +7,25 @@ export function getUserId(event) {
 
   return parseUserId(jwtToken)
 }
+
+export function apiResponseSucess(code = 200, data = {}) {
+  const resData = {
+    statusCode: code,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify(data)
+  }
+  return resData
+}
+
+export function apiResponseFail(code = 500, data = { error: 'Internal server error'}) {
+  const resData = {
+    statusCode: code,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify(data)
+  }
+  return resData
+}

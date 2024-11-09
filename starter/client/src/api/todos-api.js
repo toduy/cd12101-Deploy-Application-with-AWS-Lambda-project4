@@ -63,6 +63,8 @@ export async function getUploadUrl(idToken, todoId) {
       }
     }
   )
+  console.log("🚀 ~ getUploadUrl ~ response.data.uploadUrl:", response.data.uploadUrl)
+
   return response.data.uploadUrl
 }
 
